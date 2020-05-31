@@ -12,7 +12,6 @@
 
 - IMPLEMENTACION DE LA HPBAR
     - Colores representan la vida que le va quedando a cada Pokémon. 🟥🟨🟨🟨🟩🟩🟩🟩
-    ![GitHub Logo](/images/HPBAR1.PNG), ![GitHub Logo](/images/HPBAR2.PNG), ![GitHub Logo](/images/HPBAR3.PNG)
     
 - IMPLEMENTAR LIBRERIA GotoXY
 - 
