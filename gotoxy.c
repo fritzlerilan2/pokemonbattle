@@ -34,3 +34,13 @@ void hidecursor(int ver){                                                       
    info.bVisible = ver;
    SetConsoleCursorInfo(consoleHandle, &info);
 }
+
+void Color(int Background, int Text){
+
+ HANDLE Console = GetStdHandle(STD_OUTPUT_HANDLE);
+
+ int    New_Color= Text + (Background * 16);
+
+ SetConsoleTextAttribute(Console, New_Color);
+
+}

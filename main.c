@@ -1,10 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <Windows.h>
 
 #include "pokemon.h"
 #include "gotoxy.h"
 #include "menu.h"
 
+#define HP 219//178
+#define BLACK 0
+#define GREEN 2
+#define YELLOW 14
+#define RED 4
+#define WHITE 15
+#define LGREY 7
 
 void inic_HPBAR(char* ps, int dim);
 void inicMascara(char* mascara, int dim);
@@ -20,9 +28,15 @@ int main()
     char ps[20];
     inicMascara(mascara, 20);
     inic_HPBAR(ps, 20);
-    int psActual = 163;
+    int psActual = 325;
     int psTotal = 325;
-    HPBAR(psActual, psTotal, ps, mascara, 20);
+    do{
+        HPBAR(psActual, psTotal, ps, mascara, 20);
+        psActual--;
+        Sleep(25);
+        system("cls");
+    }while(psActual >= 0);
+
     return 0;
 }
 
@@ -32,13 +46,13 @@ int main()
 
 void inicMascara(char* mascara, int dim){
     for(int i = 0; i < dim; i++){
-        mascara[i] = 0;
+        mascara[i] = HP;
     }
 }
 
 void inic_HPBAR(char* ps, int dim){
     for(int i = 0; i < dim; i++){
-        ps[i] = 35;
+        ps[i] = HP;
     }
 }
 
@@ -65,9 +79,17 @@ void HPBAR(int psActual, int psTotal, char* ps, char* mascara, int dimension){
     int porcentaje;
     porcentaje = calcularPorcHP(psActual, psTotal, 100);
     dimHPBAR = calcularPorcHP(psActual, psTotal, dimension);
-    printf("[");
+    if( porcentaje > 50 ){
+        Color(BLACK, GREEN);
+    }else if(porcentaje > 20){
+        Color(BLACK, YELLOW);
+    }else{
+        Color(BLACK, RED);
+    }
     printHPBAR(ps, dimHPBAR);
+    Color(BLACK, LGREY);
     printHPMascara(mascara, dimension, dimHPBAR);
-    printf("]\n");
+    Color(BLACK, WHITE);
+    printf("\n");
     printf("%4d/%4d    %d%%", psActual, psTotal, porcentaje);
 }
