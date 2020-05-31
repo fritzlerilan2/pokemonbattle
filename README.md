@@ -3,6 +3,7 @@
 #### DESCRIPTION 🤓
 - Proyecto de ocio. Donde aplico conocimientos que voy adquiriendo en la carrera Tecnicatura Superior en Programacion de la Universidad tecnologica Nacional de Mar del Plata - Argentina UTN MDP.
 - Esto no lo hago solo, tambien me ayuda mi compañera Estrella Lopez (Alias Chio) ⭐
+- El juego esta desarrollado en C sin entorno gráfico, solo consola.
 - La idea es intentar imitar de cierta manera la mecanica de batalla Pokémon de los juegos de Nintendo Game Boy Advance. 🎮
 - Existe la idea de a futuro complejizarlo y añadir TIPOS, ATAQUES etc.. ✊
 
